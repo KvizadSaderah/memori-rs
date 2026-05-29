@@ -50,6 +50,11 @@ memori init
 memori doctor
 ```
 
+> Installs a binary named `memori`. If you already have the unrelated `memori`
+> crate (a Rust benchmarking tool) installed, cargo will refuse to overwrite its
+> binary — either remove it first with `cargo uninstall memori`, or force ours
+> with `cargo install memori-rs --force`.
+
 **From source** (latest unreleased changes):
 
 ```bash
