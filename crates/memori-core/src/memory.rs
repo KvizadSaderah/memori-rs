@@ -41,7 +41,7 @@ impl Memory {
         let record = MemoryRecord {
             id: Uuid::new_v4(),
             content,
-            created_at: Utc::now(),
+            created_at: now_micros(),
             tags,
             source,
             embedding,
@@ -153,6 +153,17 @@ impl Memory {
             (None, Some(f)) => self.storage.delete_by_filter(&f).await,
         }
     }
+}
+
+/// Current UTC time truncated to microsecond precision.
+///
+/// LanceDB persists `created_at` as `Timestamp(Microsecond)`, so any
+/// sub-microsecond component of `Utc::now()` (nanoseconds on Linux) is lost on
+/// the storage round-trip. Truncating at creation keeps the in-memory record
+/// bit-for-bit equal to what `update`/`list` read back.
+fn now_micros() -> chrono::DateTime<Utc> {
+    let now = Utc::now();
+    chrono::DateTime::from_timestamp_micros(now.timestamp_micros()).unwrap_or(now)
 }
 
 fn validate_content(content: &str) -> Result<(), MemoriError> {
