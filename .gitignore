@@ -1,0 +1,31 @@
+# Rust
+/target/
+**/target/
+**/*.rs.bk
+*.pdb
+
+# IDEs / editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Local secrets / env
+.env
+.env.local
+*.local
+
+# Logs
+*.log
+
+# Build / dist
+/dist/
+/build/
+target/
+.fastembed_cache/

@@ -1,0 +1,36 @@
+[package]
+name = "memori-rs"
+description = "Persistent semantic memory for AI coding agents — single binary, zero cloud"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords = ["mcp", "memory", "ai", "embeddings", "cli"]
+categories = ["command-line-utilities", "database"]
+
+[[bin]]
+name = "memori"
+path = "src/main.rs"
+
+[dependencies]
+memori-core = { path = "../memori-core", version = "0.1.0" }
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+rmcp = { workspace = true }
+clap = { workspace = true }
+dirs = { workspace = true }
+fastembed = { workspace = true }
+toml = { workspace = true }
+
+[dev-dependencies]
+tokio = { workspace = true }
+tempfile = "3"
