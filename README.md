@@ -1,5 +1,9 @@
 # memori-rs
 
+[![crates.io](https://img.shields.io/crates/v/memori-rs.svg)](https://crates.io/crates/memori-rs)
+[![docs.rs](https://img.shields.io/docsrs/memori-core)](https://docs.rs/memori-core)
+[![license](https://img.shields.io/crates/l/memori-rs.svg)](LICENSE)
+
 > Persistent semantic memory for AI coding agents — single binary, zero cloud.
 
 Gives Claude Code, Cursor, and Continue.dev a `memori.store` / `memori.recall` tool backed by a local vector database. Context from past sessions survives across restarts. Everything stays on your machine.
@@ -38,7 +42,15 @@ curl -fsSL https://raw.githubusercontent.com/KvizadSaderah/memori-rs/main/instal
 Downloads the right binary for your platform, drops it in `~/.local/bin`, and runs
 `memori init` + `memori doctor` for you.
 
-**From source** (any platform, needs a [Rust toolchain](https://rustup.rs)):
+**From [crates.io](https://crates.io/crates/memori-rs)** (any platform, needs a [Rust toolchain](https://rustup.rs)):
+
+```bash
+cargo install memori-rs
+memori init
+memori doctor
+```
+
+**From source** (latest unreleased changes):
 
 ```bash
 cargo install --git https://github.com/KvizadSaderah/memori-rs memori-rs
