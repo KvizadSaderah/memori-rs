@@ -5,7 +5,7 @@
 ### Option A — build from source (current)
 
 ```bash
-git clone https://github.com/Dmitry-Efremov/memori-rs
+git clone https://github.com/KvizadSaderah/memori-rs
 cd memori-rs
 cargo build --release
 cp target/release/memori ~/.local/bin/
